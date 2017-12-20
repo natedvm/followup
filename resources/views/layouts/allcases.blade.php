@@ -3,5 +3,5 @@
 @section('title','Cases')
 
 @section('content')
-    Test content
+
 @endsection
