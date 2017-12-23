@@ -4,24 +4,29 @@
 
 @section('content')
     <div class="container">
-        <table id="procedure_table">
+        <table id=procedure_table">
             <thead>
             <tr>
-                @foreach($procedures[0] as $header => $data)
-                    {{$header}}
+                @foreach($procedures->first()->toArray() as $header => $data)
+                    <td>
+                        {{$header}}
+                    </td>
                 @endforeach
             </tr>
             </thead>
 
             <tbody>
             @foreach($procedures as $procedure)
-                @foreach($procedure as $data)
-                    <td>
-                        {{$data}}
-                    </td>
-                @endforeach
+                <tr>
+                    @foreach($procedure->toArray() as $data)
+                        <td>
+                            {{$data}}
+                        </td>
+                    @endforeach
+                </tr>
             @endforeach
             </tbody>
         </table>
     </div>
+
 @endsection
