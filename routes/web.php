@@ -10,11 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Procedure;
 
 Route::get('/', function () {
-    $procedures = Procedure::all();
-    $test =getSomething('this_is_a_test');
-    Debugbar::info($test);
-    return view('layouts.allcases',['procedures' => $procedures]);
+    return view('layouts.allcases');
 });
