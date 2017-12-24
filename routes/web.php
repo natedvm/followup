@@ -15,5 +15,7 @@ use App\Procedure;
 
 Route::get('/', function () {
     $procedures = Procedure::all();
+    $test = \App\Helpers\testIt();
+    Debugbar::info($test);
     return view('layouts.allcases',['procedures' => $procedures]);
 });
