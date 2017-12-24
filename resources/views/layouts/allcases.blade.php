@@ -10,7 +10,7 @@
             <tr>
                 @foreach($procedures->first()->toArray() as $header => $data)
                     <th>
-                        {{ $header }}
+                        {{ App\Helpers\Custom::convertToDisplayFormat($header) }}
                     </th>
                 @endforeach
             </tr>

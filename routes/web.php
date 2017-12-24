@@ -16,7 +16,5 @@ use App\Helpers\Custom;
 
 Route::get('/', function () {
     $procedures = Procedure::all();
-    $test = Custom::testIt();
-    Debugbar::info($test);
     return view('layouts.allcases',['procedures' => $procedures]);
 });
