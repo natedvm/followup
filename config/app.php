@@ -232,6 +232,8 @@ return [
 
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
+        'Custom' => App\Helpers\Custom::class,
+
     ],
 
 ];

@@ -5,7 +5,6 @@
 @section('content')
 
     <div class="container-fluid pull-left">
-
         <table class="table table-bordered table-hover">
             <thead>
             <tr>

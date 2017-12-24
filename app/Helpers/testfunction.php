@@ -1,8 +1,14 @@
 <?php
+
 namespace App\Helpers;
 
-function testIt(){
-    return 'this is some test information';
+class Custom
+{
+
+    public static function testIt()
+    {
+        return 'this is some test information';
+    }
 }
 
 ?>

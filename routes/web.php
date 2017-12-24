@@ -12,10 +12,11 @@
 */
 
 use App\Procedure;
+use App\Helpers\Custom;
 
 Route::get('/', function () {
     $procedures = Procedure::all();
-    $test = \App\Helpers\testIt();
+    $test = Custom::testIt();
     Debugbar::info($test);
     return view('layouts.allcases',['procedures' => $procedures]);
 });
