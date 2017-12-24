@@ -3,14 +3,17 @@
 @section('title','Cases')
 
 @section('content')
-    <div class="container">
-        <table id=procedure_table">
+
+    <div class="container-fluid pull-left">
+
+
+        <table class="table table-bordered table-hover">
             <thead>
             <tr>
                 @foreach($procedures->first()->toArray() as $header => $data)
-                    <td>
-                        {{$header}}
-                    </td>
+                    <th>
+                        {{ $header }}
+                    </th>
                 @endforeach
             </tr>
             </thead>

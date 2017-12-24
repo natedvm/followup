@@ -11,6 +11,9 @@
 |
 */
 
+use App\Procedure;
+
 Route::get('/', function () {
-    return view('layouts.allcases');
+    $procedures = Procedure::all();
+    return view('layouts.allcases',['procedures' => $procedures]);
 });
