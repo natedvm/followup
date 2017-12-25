@@ -28,3 +28,5 @@ class HelperServiceProvider extends ServiceProvider
         }
     }
 }
+/*TODO consider using the $defer property and making it true - also would require making a provides function
+this would allow conditional loading of the class only when needed.  */
