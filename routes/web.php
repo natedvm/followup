@@ -14,7 +14,4 @@
 use App\Procedure;
 use App\Helpers\Custom;
 
-Route::get('/', function () {
-    $procedures = Procedure::all();
-    return view('layouts.allcases',['procedures' => $procedures]);
-});
+Route::get('/', 'ProcedureController@getAllProcedures')->name('Layouts.allcases');
