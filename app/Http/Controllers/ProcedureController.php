@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Procedure;
-use DebugBar\DebugBar;
 use Illuminate\Http\Request;
 
 class ProcedureController extends Controller
