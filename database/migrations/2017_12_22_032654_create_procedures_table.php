@@ -23,6 +23,7 @@ class CreateProceduresTable extends Migration
             $table->enum('sex',['M','F','M/N','F/S']);
             $table->string('breed');
             $table->integer('weight');
+            $table->string('email');
             $table->date('date_of_surgery');
             $table->enum('side',['R','L','Bilateral']);
             $table->integer('preop_angle');

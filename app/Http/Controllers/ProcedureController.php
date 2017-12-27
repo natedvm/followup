@@ -14,7 +14,6 @@ class ProcedureController extends Controller
     }
 
     public function addProcedure(){
-        $procedure = new Procedure();
-
+        return view('layouts.addcase');
     }
 }

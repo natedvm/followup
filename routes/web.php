@@ -11,8 +11,6 @@
 |
 */
 
-use App\Procedure;
-use App\Helpers\Custom;
 
 Route::get('/', [
     'uses' => 'ProcedureController@getAllProcedures',

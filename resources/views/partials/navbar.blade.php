@@ -4,8 +4,9 @@
             <a class="navbar-brand" href="#">Case follow up</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">View Cases</a></li>
-            <li><a href="#">Add Case</a></li>
+            <li class="active"><a href="{{route('layouts.allcases')}}">View Cases</a></li>
+            <li><a href="{{route('layouts.addcase')}}">Add Case</a></li>
         </ul>
     </div>
 </nav>
+{{--TODO change active class in NavBar to reflect page when we go to Add Case and back--}}
