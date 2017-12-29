@@ -19,7 +19,7 @@
                     <thead>
                     <tr>
                         @foreach($procedures->first()->toArray() as $header => $data)
-                            <th class="{{$header}}_header">
+                            <th id="{{$header}}_header">
                                 {{ App\Helpers\Custom::convertToDisplayFormat($header) }}
                             </th>
                         @endforeach

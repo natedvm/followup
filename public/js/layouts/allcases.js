@@ -1,13 +1,12 @@
 $(document).ready(function () {
-    var table=$('#procedureTable').DataTable({
-        columnDefs: [
-            {
-                targets: ['id_header',
-                    'created_at_header',
-                    'updated_at_header'], visible: false
-            }
-        ]
-    });
+    var table = $('#procedureTable').DataTable({});
 
-    table.columns(['.created_at_header']).visible(true);
+    table.columns(
+        [
+            '#id_header',
+            '#updated_at_header',
+            '#created_at_header'
+        ]
+    ).visible(false);
+
 });
