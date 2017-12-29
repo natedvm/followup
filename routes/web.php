@@ -18,6 +18,11 @@ Route::get('/', [
 ]);
 
 Route::get('/addcase', [
-    'uses' => 'ProcedureController@addProcedure',
+    'uses' => 'ProcedureController@getAddProcedure',
+    'as' => 'layouts.addcase'
+]);
+
+Route::post('/addcase', [
+    'uses' => 'ProcedureController@postAddProcedure',
     'as' => 'layouts.addcase'
 ]);

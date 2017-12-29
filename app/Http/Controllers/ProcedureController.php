@@ -13,7 +13,11 @@ class ProcedureController extends Controller
         return view('layouts.allcases',['procedures' => $procedures]);
     }
 
-    public function addProcedure(){
+    public function getAddProcedure(){
         return view('layouts.addcase');
+    }
+
+    public function postAddProcedure(){
+        return redirect()->route('layouts.allcases')->with('info','Show this info');
     }
 }
