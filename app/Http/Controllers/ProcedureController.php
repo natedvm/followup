@@ -17,7 +17,8 @@ class ProcedureController extends Controller
         return view('layouts.addcase');
     }
 
-    public function postAddProcedure(){
+    public function postAddProcedure(Request $request){
+        \Debugbar::info($request->all());
         return redirect()->route('layouts.allcases')->with('info','Show this info');
     }
 }

@@ -20,49 +20,49 @@
                     <div class="form-group">
                         <label class="control-label col-sm-4" for="patient_name">Patient Name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="patient_name">
+                            <input type="text" class="form-control" id="patient_name" name="patient_name">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-4" for="last_name">Last Name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="last_name">
+                            <input type="text" class="form-control" id="last_name" name="last_name">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-4" for="dvmax_id">DVMax ID</label>
                         <div class="col-sm-8">
-                            <input type="number" class="form-control" id="dvmax_id">
+                            <input type="number" class="form-control" id="dvmax_id" name="dvmax_id">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-4" for="date_of_birth">Date of Birth</label>
                         <div class="col-sm-8">
-                            <input type="date" class="form-control" id="date_of_birth">
+                            <input type="date" class="form-control" id="date_of_birth" name="date_of_birth">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-4" for="sex">Sex</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="sex">
+                            <input type="text" class="form-control" id="sex" name="sex">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-4" for="breed">Breed</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="breed">
+                            <input type="text" class="form-control" id="breed" name="breed">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-4" for="weight">Weight</label>
                         <div class="col-sm-8">
-                            <input type="number" class="form-control" id="weight">
+                            <input type="number" class="form-control" id="weight" name="weight">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-4" for="email">Email</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="email">
+                            <input type="text" class="form-control" id="email" name="email">
                         </div>
                     </div>
                     {{csrf_field()}}
@@ -79,7 +79,7 @@
                 <form class="form" action="{{route('layouts.addcase')}}" method="post">
                     <div class="form-group">
                         <label class="control-label col-sm-4" for="export_string">Export String from DVMax</label>
-                        <textarea class="form-control" rows="16" id="export_string"></textarea>
+                        <textarea class="form-control" rows="16" id="export_string" name="export_string"></textarea>
                     </div>
                     {{csrf_field()}}
                     <button type="submit" class="btn btn-default">Add Case</button>
