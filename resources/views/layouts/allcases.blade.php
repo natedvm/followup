@@ -18,6 +18,8 @@
                 <table id="procedureTable" class="table table-bordered table-hover">
                     <thead>
                     <tr>
+                        {{--TODO this errors if no procedures are returned - find a way to pass headers without need to --}}
+                        {{--have a procedure in the $procedures array--}}
                         @foreach($procedures->first()->toArray() as $header => $data)
                             <th id="{{$header}}_header">
                                 {{ App\Helpers\Custom::convertToDisplayFormat($header) }}
