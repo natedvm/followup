@@ -8,11 +8,16 @@
 
 @section('content')
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <p class="alert alert-info">{{Session::get('info')}}</p>
+
+        {{--Display an alert with info if it is passed in the session from the page which redirected here--}}
+        @if(Session::exists('info'))
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="alert alert-info">{{Session::get('info')}}</p>
+                </div>
             </div>
-        </div>
+        @endif
+
         <div class="row">
             <div class="col-lg-12">
                 <table id="procedureTable" class="table table-bordered table-hover">
