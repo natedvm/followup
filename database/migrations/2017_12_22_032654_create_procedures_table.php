@@ -16,24 +16,24 @@ class CreateProceduresTable extends Migration
         Schema::create('procedures', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('patient_name');
-            $table->string('last_name');
-            $table->integer('dvmax_id');
-            $table->date('date_of_birth');
-            $table->enum('sex',['M','F','M/N','F/S']);
-            $table->string('breed');
-            $table->integer('weight');
-            $table->string('email');
-            $table->date('date_of_surgery');
-            $table->enum('side',['R','L','Bilateral']);
-            $table->integer('preop_angle');
-            $table->integer('blade_size');
-            $table->decimal('rotation',8,2);
-            $table->integer('postop_angle');
-            $table->string('plate');
-            $table->text('meniscal_status');
-            $table->text('comments');
-            $table->text('complications');
+            $table->string('patient_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->integer('dvmax_id')->nullable();
+            $table->date('date_of_birth')->nullable();
+            $table->enum('sex',['M','F','M/N','F/S'])->nullable();
+            $table->string('breed')->nullable();
+            $table->integer('weight')->nullable();
+            $table->string('email')->nullable();
+            $table->date('date_of_surgery')->nullable();
+            $table->enum('side',['R','L','Bilateral'])->nullable();
+            $table->integer('preop_angle')->nullable();
+            $table->integer('blade_size')->nullable();
+            $table->decimal('rotation',8,2)->nullable();
+            $table->integer('postop_angle')->nullable();
+            $table->string('plate')->nullable();
+            $table->text('meniscal_status')->nullable();
+            $table->text('comments')->nullable();
+            $table->text('complications')->nullable();
         });
     }
 

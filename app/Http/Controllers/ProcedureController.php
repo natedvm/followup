@@ -18,7 +18,10 @@ class ProcedureController extends Controller
     }
 
     public function postAddProcedure(Request $request){
-        \Debugbar::info($request->all());
+        $procedure = new Procedure();
+        $procedure->patient_name = $request->input('patient_name');
+        \Debugbar::info($procedure);
+        $procedure->save();
         return redirect()->route('layouts.allcases')->with('info','Show this info');
     }
 }
