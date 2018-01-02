@@ -14,7 +14,7 @@
             <br>
         </div>
         <div class="row">
-            <div class="col-lg-5">
+            <div class="col-md-5">
                 {{--Individual entry form--}}
                 <form class="form-horizontal" id="form-add-case" action="{{route('layouts.addcase')}}" method="post">
                     <div class="form-group">
@@ -70,11 +70,11 @@
                 </form>
             </div>
 
-            <div class="col-lg-1 text-center">
+            <div class="col-md-1 text-center">
                 <h1>OR</h1>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-md-6">
                 {{--Form for export string entry --}}
                 <form class="form" action="{{route('layouts.addcase')}}" method="post">
                     <div class="form-group">

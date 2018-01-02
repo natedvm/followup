@@ -31,4 +31,8 @@ class ProcedureController extends Controller
         return redirect()->route('layouts.allcases')->with('info', $procedure->patient_name . " " .
     $procedure->last_name . " was added successfully");
     }
+
+    public function getEditProcedure(){
+        return view('layouts.editcase');
+    }
 }
