@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var table = $('#procedureTable').DataTable({});
+    var table = $('#procedureTable').DataTable();
 
     table.columns(
         [
