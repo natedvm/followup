@@ -1,4 +1,5 @@
 @extends('layouts.master')
+{{--Requires $procedures variable passed to it - this should be a collection of all variables--}}
 
 @section('pagescript')
     <script type="text/javascript" src="{{asset('js/layouts/allcases.js')}}"></script>
