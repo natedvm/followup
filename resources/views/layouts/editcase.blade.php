@@ -21,14 +21,14 @@
                 <label class="control-label" for="patient_name">Patient Name</label>
                 <div>
                     <input type="text" class="form-control"
-                           id="patient_name" name="patient_name">
+                           id="patient_name" name="patient_name" value="{{$procedure->patient_name}}">
                 </div>
             </div>
             <div class="form-group col-md-4">
                 <label class="control-label" for="last_name">Last Name</label>
                 <div>
                     <input type="text" class="form-control"
-                           id="last_name" name="last_name">
+                           id="last_name" name="last_name" value="{{$procedure->last_name}}">
                 </div>
             </div>
             <div class="form-group col-md-4">

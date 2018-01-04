@@ -32,7 +32,8 @@ class ProcedureController extends Controller
     $procedure->last_name . " was added successfully");
     }
 
-    public function getEditProcedure(){
-        return view('layouts.editcase');
+    public function getEditProcedure($id){
+        $procedure = Procedure::find($id);
+        return view('layouts.editcase',['procedure' => $procedure]);
     }
 }

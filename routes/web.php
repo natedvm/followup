@@ -27,7 +27,7 @@ Route::post('/addcase', [
     'as' => 'layouts.addcase'
 ]);
 
-Route::get('/editcase', [
+Route::get('/editcase/{id}', [
     'uses' => 'ProcedureController@getEditProcedure',
     'as' => 'layouts.editcase'
 ]);
