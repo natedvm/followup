@@ -6,7 +6,6 @@
         <ul class="nav navbar-nav">
             <li class="active"><a href="{{route('layouts.allcases')}}">View Cases</a></li>
             <li><a href="{{route('layouts.addcase')}}">Add Case</a></li>
-            <li><a href="{{route('layouts.editcase',1)}}">Edit Case</a></li>
         </ul>
     </div>
 </nav>
