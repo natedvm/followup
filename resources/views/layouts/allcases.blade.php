@@ -37,7 +37,7 @@
 
                     <tbody>
                     @foreach($procedures as $procedure)
-                        <tr>
+                        <tr ondblclick="window.location='{{route('layouts.editcase',$procedure->id)}}'">
                             @foreach($procedure->toArray() as $data)
                                 <td>
                                     {{$data}}
