@@ -76,7 +76,7 @@
 
             <div class="col-md-6">
                 {{--Form for export string entry --}}
-                <form class="form" action="{{route('layouts.addcase')}}" method="post">
+                <form class="form" action="{{route('layouts.addcasestring')}}" method="post">
                     <div class="form-group">
                         <label class="control-label col-sm-4" for="export_string">Export String from DVMax</label>
                         <textarea class="form-control" rows="16" id="export_string" name="export_string"></textarea>

@@ -8,16 +8,26 @@ use Illuminate\Http\Request;
 
 class ProcedureController extends Controller
 {
-    public function getAllProcedures(){
-        $procedures = Procedure::all();
-        return view('layouts.allcases',['procedures' => $procedures]);
+    public function reversedate($string) {
+        // used to reverse DVMax date format to mysql acceptable format
+        $temp = explode('/', $string);
+        $return = $temp[2] . '/' . $temp[0] . '/' . $temp[1];
+        return $return;
     }
 
-    public function getAddProcedure(){
+    public function getAllProcedures()
+    {
+        $procedures = Procedure::all();
+        return view('layouts.allcases', ['procedures' => $procedures]);
+    }
+
+    public function getAddProcedure()
+    {
         return view('layouts.addcase');
     }
 
-    public function postAddProcedure(Request $request){
+    public function postAddProcedure(Request $request)
+    {
         $procedure = new Procedure();
         $procedure->patient_name = $request->input('patient_name');
         $procedure->last_name = $request->input('last_name');
@@ -29,11 +39,53 @@ class ProcedureController extends Controller
         $procedure->email = $request->input('email');
         $procedure->save();
         return redirect()->route('layouts.allcases')->with('info', $procedure->patient_name . " " .
-    $procedure->last_name . " was added successfully");
+            $procedure->last_name . " was added successfully");
     }
 
-    public function getEditProcedure($id){
-        $procedure = Procedure::find($id);
-        return view('layouts.editcase',['procedure' => $procedure]);
+    public function postAddProcedureString(Request $request)
+    {
+        $procedure = new Procedure();
+        $dvmmaxdata = explode('|*|', $request->input('export_string'));
+
+        switch ($dvmmaxdata[4]) {
+            case "neuteredmale":
+                $dvmmaxdata[4] = "M/N";
+                break;
+            case "intactmale":
+                $dvmmaxdata[4] = "M";
+                break;
+            case "spayedfemale":
+                $dvmmaxdata[4] = "F/S";
+                break;
+            case "intactfemale":
+                $dvmmaxdata[4] = "F";
+                break;
+        }                           // change to enum values for Sex field
+        $temp = explode('/', $dvmmaxdata[3]);
+        $dvmmaxdata[3] = $temp[2] . '/' . $temp[0] . '/' . $temp[1];          //change date to SQL format
+//TODO figure out how to put this into the reversedate call - now it can't find the other function
+        $procedure->patient_name = $dvmmaxdata[0];
+        $procedure->last_name = $dvmmaxdata[1];
+        $procedure->dvmax_id = $dvmmaxdata[2];
+        $procedure->date_of_birth = $dvmmaxdata[3];
+        $procedure->sex = $dvmmaxdata[4];
+        $procedure->breed = $dvmmaxdata[5];
+        $procedure->weight = $dvmmaxdata[6];
+
+        $procedure->save();
+
+        return redirect()->route('layouts.allcases')->with('info', $procedure->patient_name . " " .
+            $procedure->last_name . " was added successfully");
     }
+
+    public function getEditProcedure($id)
+    {
+        $procedure = Procedure::find($id);
+        return view('layouts.editcase', ['procedure' => $procedure]);
+    }
+
+
+
 }
+
+
