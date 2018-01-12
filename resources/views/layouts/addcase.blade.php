@@ -13,6 +13,9 @@
             <br>
             <br>
         </div>
+
+        @include ('partials.errors')
+
         <div class="row">
             <div class="col-md-5">
                 {{--Individual entry form--}}
