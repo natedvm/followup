@@ -28,6 +28,11 @@ class ProcedureController extends Controller
 
     public function postAddProcedure(Request $request)
     {
+        $request->validate([
+            'patient_name' => 'required',
+            'last_name' => 'required'
+        ]);
+
         $procedure = new Procedure();
         $procedure->patient_name = $request->input('patient_name');
         $procedure->last_name = $request->input('last_name');
