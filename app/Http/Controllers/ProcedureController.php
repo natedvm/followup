@@ -84,7 +84,32 @@ class ProcedureController extends Controller
         return view('layouts.editcase', ['procedure' => $procedure]);
     }
 
+    public function postEditProcedure($id, Request $request){
+        $procedure = Procedure::find($id);
+        $procedure->patient_name = $request->input('patient_name');
+        $procedure->last_name = $request->input('last_name');
+        $procedure->dvmax_id = $request->input('dvmax_id');
+        $procedure->date_of_birth = $request->input('date_of_birth');
+        $procedure->sex = $request->input('sex');
+        $procedure->breed = $request->input('breed');
+        $procedure->weight = $request->input('weight');
+        $procedure->email = $request->input('email');
+        $procedure->date_of_surgery = $request->input('date_of_surgery');
+        $procedure->side = $request->input('side');
+        $procedure->preop_angle = $request->input('preop_angle');
+        $procedure->blade_size = $request->input('blade_size');
+        $procedure->rotation = $request->input('rotation');
+        $procedure->postop_angle = $request->input('postop_angle');
+        $procedure->plate = $request->input('plate');
+        $procedure->meniscal_status = $request->input('meniscal_status');
+        $procedure->comments = $request->input('comments');
+        $procedure->complications = $request->input('complications');
 
+        $procedure->save();
+
+
+        return redirect()->route('layouts.editcase',['procedure' => $procedure])->with('info','Case updated successfully');
+    }
 
 }
 
