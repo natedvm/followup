@@ -6,5 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Procedure extends Model
 {
-   // protected $hidden = ['id','created_at','updated_at'];
+   protected $fillable = [
+       'patient_name',
+       'last_name',
+       'dvmax_id',
+       'date_of_birth',
+       'sex',
+       'breed',
+       'weight',
+       'email'
+   ];
 }

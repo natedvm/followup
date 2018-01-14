@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 
 class ProcedureController extends Controller
 {
-    public function reversedate($string) {
+    public function reversedate($string)
+    {
         // used to reverse DVMax date format to mysql acceptable format
         $temp = explode('/', $string);
         $return = $temp[2] . '/' . $temp[0] . '/' . $temp[1];
@@ -28,21 +29,29 @@ class ProcedureController extends Controller
 
     public function postAddProcedure(Request $request)
     {
+
         $request->validate([
             'patient_name' => 'required',
-            'last_name' => 'required'
+            'last_name' => 'required',
+            'dvmax_id' => 'required|integer',
+            'date_of_birth' => 'required',
+            'sex' => 'required',
+            'breed' => 'required',
+            'weight' => 'required',
+            'email' => 'required'
         ]);
 
-        $procedure = new Procedure();
-        $procedure->patient_name = $request->input('patient_name');
-        $procedure->last_name = $request->input('last_name');
-        $procedure->dvmax_id = $request->input('dvmax_id');
-        $procedure->date_of_birth = $request->input('date_of_birth');
-        $procedure->sex = $request->input('sex');
-        $procedure->breed = $request->input('breed');
-        $procedure->weight = $request->input('weight');
-        $procedure->email = $request->input('email');
-        $procedure->save();
+        $procedure = Procedure::create($request->only([
+            'patient_name',
+            'last_name',
+            'dvmax_id',
+            'date_of_birth',
+            'sex',
+            'breed',
+            'weight',
+            'email'
+        ]));
+
         return redirect()->route('layouts.allcases')->with('info', $procedure->patient_name . " " .
             $procedure->last_name . " was added successfully");
     }
@@ -89,7 +98,8 @@ class ProcedureController extends Controller
         return view('layouts.editcase', ['procedure' => $procedure]);
     }
 
-    public function postEditProcedure($id, Request $request){
+    public function postEditProcedure($id, Request $request)
+    {
         $procedure = Procedure::find($id);
         $procedure->patient_name = $request->input('patient_name');
         $procedure->last_name = $request->input('last_name');
@@ -113,7 +123,7 @@ class ProcedureController extends Controller
         $procedure->save();
 
 
-        return redirect()->route('layouts.editcase',['procedure' => $procedure])->with('info','Case updated successfully');
+        return redirect()->route('layouts.editcase', ['procedure' => $procedure])->with('info', 'Case updated successfully');
     }
 
 }
