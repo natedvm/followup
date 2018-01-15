@@ -33,12 +33,14 @@ class ProcedureController extends Controller
         $request->validate([
             'patient_name' => 'required',
             'last_name' => 'required',
-            'dvmax_id' => 'required|integer',
-            'date_of_birth' => 'required',
-            'sex' => 'required',
-            'breed' => 'required',
-            'weight' => 'required',
-            'email' => 'required'
+            'dvmax_id' => 'nullable|integer',
+            'date_of_birth' => 'nullable|date',
+            'sex' => 'nullable',
+//            TODO need to put in validation for enum field
+            'breed' => '',
+            'weight' => 'nullable|integer',
+            'email' => 'nullable|email'
+//            TODO when errors are received fro validation repopulate field in the form
         ]);
 
         $procedure = Procedure::create($request->only([

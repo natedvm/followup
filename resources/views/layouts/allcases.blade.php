@@ -19,7 +19,36 @@
                 </div>
             </div>
         @endif
-
+        <div class="row">
+            <div class="col-md-3">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary active information-button"
+                            id="button-patient-information">
+                        Patient Info
+                    </button>
+                    <button type="button" class="btn btn-primary information-button" id="button-surgery-information">
+                        Surgery Info
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary active case-selector-button"
+                            id="button-all-cases">
+                        All Cases
+                    </button>
+                    <button type="button" class="btn btn-primary case-selector-button"
+                            id="button-incomplete-patient-information">
+                        Incomplete Patient Info
+                    </button>
+                    <button type="button" class="btn btn-primary case-selector-button"
+                            id="button-incomplete-surgery-information">
+                        Incomplete Surgery Info
+                    </button>
+                </div>
+            </div>
+        </div>
+        <br>
         <div class="row">
             <div class="col-lg-12">
                 <table id="procedureTable" class="table table-bordered table-hover">
