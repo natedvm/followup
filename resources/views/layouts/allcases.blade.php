@@ -52,6 +52,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <table id="procedureTable" class="table table-bordered table-hover">
+                    {{--keep table hidden until reformateed during document ready - unhidden by JS--}}
                     <thead>
                     <tr>
                         {{--TODO this errors if no procedures are returned - find a way to pass headers without need to --}}
