@@ -18,8 +18,9 @@ class ProcedureController extends Controller
 
     public function getAllProcedures()
     {
+        $headers = Procedure::returnColumnHeaders();
         $procedures = Procedure::all();
-        return view('layouts.allcases', ['procedures' => $procedures]);
+        return view('layouts.allcases', ['procedures' => $procedures, 'headers' => $headers]);
     }
 
     public function getAddProcedure()

@@ -16,4 +16,18 @@ class Procedure extends Model
        'weight',
        'email'
    ];
+
+    public static function returnColumnHeaders()
+    {
+        $temp = new Procedure();
+        $headers = \Schema::getColumnListing($temp->getTable());
+        return $headers;
+    }
+
+    public static function convertToDisplayFormat($header)
+    {
+        $header = str_replace('_',' ',$header);
+        $header = ucfirst($header);
+        return $header;
+    }
 }
